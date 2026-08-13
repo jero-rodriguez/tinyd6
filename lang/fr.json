@@ -1,0 +1,265 @@
+{
+  "TYPES": {
+    "Actor": {
+      "hero": "Héros",
+      "npc": "PNJ"
+    },
+    "Item": {
+      "weapon": "Arme",
+      "armor": "Armure",
+      "gear": "Équipement",
+      "heritage": "Héritage",
+      "trait": "Trait"
+    }
+  },
+  "tinyd6": {
+    "TinyD6HeroSheet": "PJ",
+    "TinyD6NpcSheet": "PNJ",
+    "system": {
+      "name": "Tiny D6 2e",
+      "dieRoller": "Lanceur de dés"
+    },
+    "settings": {
+      "title": "Paramètres du système",
+      "label": "Paramètres du système",
+      "description": "Choisissez les règles et mécaniques optionnelles que vous souhaitez activer parmi les options suivantes.",
+      "theme": {
+        "name": "Theme",
+        "hint": "Ce paramètre permet de thématiser votre monde pour un jeu Tiny D6 spécifique.",
+        "choices": {
+          "cthulhu": "Tiny Cthulhu",
+          "dungeon": "Tiny Dungeon 2e"
+        }
+      },
+      "rollerInCharsheet": {
+        "name": "Lanceur de dés dans la fiche de personnage",
+        "hint": "Activez pour avoir un lanceur de dés dans la fiche de personnage."
+      },
+      "enableCorruption": {
+        "name": "Activer la Corruption",
+        "hint": "Ajoutez une piste à la fiche de personnage pour marquer la Corruption."
+      },
+      "enableAdvancement": {
+        "name": "Progression du personnage",
+        "hint": "Les personnages progressent soit en fonction du nombre de sessions, soit en attribuant des points d'expérience.",
+        "choices": {
+          "none": "Pas de progression",
+          "minimalist": "Avancement minimaliste",
+          "xp": "Points d'expérience"
+        }
+      },
+      "enableItemTracking": {
+        "name": "Activer le suivi des objets",
+        "hint": "Affichez l'utilisation des emplacements pour les objets et calculez les emplacements d'inventaire restants."
+      },
+      "enableDepletionPoints": {
+        "name": "Activer les points d'usure",
+        "hint": "Lorsque les objets utilisent des points d'usures, suivez-les pour les objets des personnages."
+      },
+      "enableCriticalHits": {
+        "name": "Activer les coups critiques",
+        "hint": "Marquez un test comme un 'succès critique' lorsque tous les dés sont à 6."
+      },
+      "enableCriticalFailure": {
+        "name": "Activer les échecs critiques",
+        "hint": "Marquez un test comme un 'échec critique' lorsque tous les dés sont à 1."
+      },
+      "enableVariableWeaponDamage": {
+        "name": "Dégâts d'arme variables",
+        "hint": "Calculez les dégâts variables des armes pour les jets d'attaque."
+      },
+      "enableDamageReduction": {
+        "name": "Activer la réduction des dégâts",
+        "hint": "L'armure fournit une réduction de dégâts statique lorsqu'elle est équipée."
+      },
+      "enablePowerOrigin": {
+        "name": "Activer l'origine du pouvoir",
+        "hint": "Ajoute un champ de texte pour l'origine de votre Super Pouvoir."
+      },
+      "enableWeakness": {
+        "name": "Activer la faiblesse",
+        "hint": "Ajoute un champ de texte pour votre Super Faiblesse."
+      },
+      "enablePanic": {
+        "name": "Activer la panique",
+        "hint": "Ajoute un compteur pour suivre la panique."
+      },
+      "enableRadiation": {
+        "name": "Activer la radiation",
+        "hint": "Ajoute un compteur pour suivre la radiation."
+      },
+      "enableGrit": {
+        "name": "Activer le courage",
+        "hint": "Ajoute un compteur pour suivre le courage."
+      }
+    },
+    "dice": {
+      "modifier": {
+        "focus": "Focus",
+        "marksman": "Tireur d'élite"
+      },
+      "roll": {
+        "disadvantage": "Désavantage",
+        "standard": "Test Standard",
+        "advantage": "Avantage",
+        "success": "Succès!",
+        "failure": "Échec",
+        "critical": "Succès Critique!!",
+        "botch": "Échec Critique!!"
+      }
+    },
+    "sheet": {
+      "newItem": "Nouvel Objet",
+      "description": "Description",
+      "none": "None"
+    },
+    "actor": {
+      "name": "Nom",
+      "npc": "PNJ",
+      "people": "Personnage",
+      "traits": "Traits",
+      "description": "Description",
+      "tiny-cthulhu": {
+        "character": "Bio",
+        "heritage": {
+          "header": "Archetype",
+          "traits": "Traits d'Archetype",
+          "delete": "Retirer Archetype"
+        }
+      },
+      "tiny-dungeon": {
+        "character": "Personnage",
+        "heritage": {
+          "header": "Heritage",
+          "traits": "Trait d'Heritage",
+          "delete": "Retirer Heritage"
+        }
+      },
+      "homeland": "Pays d'origine",
+      "age": "Age",
+      "eyes": "Yeux",
+      "hair": "Cheveux",
+      "familyTrade": "Apprentissage de Famille",
+      "powerOrigin": "Origine du Pouvoir",
+      "weakness": "Faiblesse",
+      "belief": "Croyance",
+      "xp": {
+        "header": "Experience",
+        "progression": "Progression",
+        "total": "Total",
+        "spent": "Dépensé",
+        "remaining": "Restant"
+      },
+      "wounds": {
+        "header": "Santé",
+        "current": "Actuel",
+        "max": "Max:",
+        "increaseMax": "Augmenter Santé Max",
+        "help": "Cochez une case lorsque vous subissez des dégâts. Décochez lorsque vous êtes soigné."
+      },
+      "radiation": {
+        "header": "Radiation",
+        "current": "Actuel",
+        "max": "Max:",
+        "increaseMax": "Augmenter Radiation Max",
+        "help": "Cochez une case lorsque vous subissez de la radiation."
+      },
+      "corruption": {
+        "test": "Test de Corruption",
+        "header": "Corruption",
+        "current": "Actuel",
+        "max": "Max:",
+        "increaseMax": "Augmenter Seuil de Corruption",
+        "help": "Cochez une case lorsque vous subissez de la corruption. Décochez si vous récupérez."
+      },
+      "panic": {
+        "test": "Test de Panique",
+        "header": "Panique",
+        "current": "Actuel",
+        "help": "Décochez une case lorsque vous subissez de la panique. Cochez si vous récupérez. Test de panique lorsque la panique est à 1."
+      },
+      "grit": {
+        "header": "Courage",
+        "current": "Actuel",
+        "help": "Décochez une case lorsque vous dépensez du Courage."
+      },
+      "proficiencies": {
+        "header": "Maitrise",
+        "mastered": "Expertise"
+      },
+      "gear": "Inventaire",
+      "equipped": "Equipé",
+      "equip": "Équiper",
+      "weaponry": "Armement",
+      "wearing": "Vêtements",
+      "actions": {
+        "editTrait": "Editer le Trait",
+        "deleteTrait": "Supprimer le Trait"
+      }
+    },
+    "weaponCategories":
+    {
+      "melee": "Mêlée",
+      "ranged": "Distance"
+    },
+    "weaponTypes": {
+      "none": "",
+      "light": "Légère",
+      "heavy": "Lourde"
+    },
+    "armorTypes": {
+      "none": "",
+      "light": "Légère",
+      "medium": "Moyenne",
+      "heavy": "Lourde"
+    },
+    "corruptionTests": {
+      "none": "Non",
+      "disadvantage": "Désavantage",
+      "standard": "Normal"
+    },
+    "weapon": {
+      "name": "Nom",
+      "type": "Type d'Arme",
+      "damage": "Dégâts",
+      "slots": "Emplacements d'Objet",
+      "description": "Description",
+      "light": "Légère",
+      "heavy": "Lourde",
+      "ranged": "Distance",
+      "lightMelee": "l. Mêlée",
+      "heavyMelee": "L. Mêlée",
+      "lightRanged": "l. Distance",
+      "heavyRanged": "L. Distance",
+      "lightShort": "l",
+      "heavyShort": "L",
+      "meleeShort": "M",
+      "rangedShort": "D"
+    },
+    "armor": {
+      "name": "Nom",
+      "type": "Type d'armure",
+      "damageReduction": "DR",
+      "slots": "Emplacements d'Objet",
+      "depletion": "Usure",
+      "description": "Description",
+      "none": "Aucune"
+    },
+    "gear": {
+      "name": "Nom",
+      "slots": "Emplacements d'Objet",
+      "depletion": "Usure",
+      "quantity": "Quantité",
+      "description": "Description"
+    },
+    "heritage": {
+      "trait": "Trait d'Heritage",
+      "startingHealth": "Points de Vie de Départ",
+      "corruptionThreshold": "Sueil de Corruption"
+    },
+    "trait": {
+      "name": "Nom",
+      "description": "Description"
+    }
+  }
+}

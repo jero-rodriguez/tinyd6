@@ -1,0 +1,36 @@
+<div class="tinyd6-sheet actor-sheet {{cssClass}}">
+    {{#if owner}}
+        {{> "systems/tinyd6/templates/partials/roll-bar.hbs" flexClass=""}}
+    {{/if}}
+
+    <header class="sheet-identity">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" alt="{{actor.name}}"/>
+        <div>
+            <p class="sheet-kicker">{{localize config.characterHeaderPath}}</p>
+            <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'tinyd6.actor.name'}}"/>
+        </div>
+    </header>
+
+    <section class="sheet-card">
+        <h2>{{localize config.characterHeaderPath}}</h2>
+        <div class="sheet-fields two-columns">
+            <label>{{localize "tinyd6.actor.familyTrade"}}<input name="system.familyTrade" type="text" value="{{data.system.familyTrade}}"/></label>
+            <label>{{localize config.heritageHeaderPath}}<span class="field-actions" data-item-id="{{heritage.id}}"><button type="button" data-action="showItem">{{heritage.name}}</button>{{#if heritage}}<button type="button" data-action="deleteItem" title="{{localize config.heritageDeleteTooltipPath}}"><i class="fas fa-times"></i></button>{{/if}}</span></label>
+        </div>
+        <label class="sheet-field">{{localize "tinyd6.actor.belief"}}<input name="system.belief" type="text" value="{{data.system.belief}}"/></label>
+        <div class="sheet-editor"><h3>{{localize "tinyd6.actor.description"}}</h3>{{#if editable}}<prose-mirror name="system.description" data-document-u-u-i-d="{{actor.uuid}}" value="{{data.system.description}}" collaborate="true" toggled="true">{{{descriptionHTML}}}</prose-mirror>{{else}}{{{descriptionHTML}}}{{/if}}</div>
+    </section>
+
+    <section class="sheet-stat-grid">
+        <div class="sheet-card meter-card"><div class="meter-heading"><h2>{{localize "tinyd6.actor.wounds.header"}}</h2><label>{{localize "tinyd6.actor.wounds.max"}}<input name="system.wounds.max" type="number" value="{{data.system.wounds.max}}"/></label></div><div class="meter">{{#times data.system.wounds.max}}<input type="checkbox" data-meter="wounds" {{#if (lt . ../data.system.wounds.value)}}checked{{/if}}/>{{/times}}</div><p class="help">{{localize "tinyd6.actor.wounds.help"}}</p></div>
+        {{#if config.enableCorruption}}<div class="sheet-card meter-card"><div class="meter-heading"><h2>{{localize "tinyd6.actor.corruption.header"}}</h2><label>{{localize "tinyd6.actor.corruption.max"}}<input name="system.corruptionThreshold.max" type="number" value="{{data.system.corruptionThreshold.max}}"/></label></div><div class="meter">{{#times data.system.corruptionThreshold.max}}<input type="checkbox" data-meter="corruption" {{#if (lt . ../data.system.corruptionThreshold.value)}}checked{{/if}}/>{{/times}}</div><p class="help">{{localize "tinyd6.actor.corruption.help"}}</p></div>{{/if}}
+        {{#if (eq config.advancementMethod 'minimalist')}}<div class="sheet-card meter-card"><h2>{{localize "tinyd6.actor.xp.progression"}}</h2><div class="meter">{{#times data.system.advancement.max}}<input type="checkbox" data-meter="advancement" {{#if (lt . ../data.system.advancement.value)}}checked{{/if}}/>{{/times}}</div></div>{{/if}}
+        {{#if (eq config.advancementMethod 'xp')}}<div class="sheet-card"><h2>{{localize "tinyd6.actor.xp.header"}}</h2><div class="sheet-fields"><label>{{localize "tinyd6.actor.xp.total"}}<input name="system.xp.max" type="number" value="{{data.system.xp.max}}"/></label><label>{{localize "tinyd6.actor.xp.spent"}}<input name="system.xp.spent" type="number" value="{{data.system.xp.spent}}"/></label><label>{{localize "tinyd6.actor.xp.remaining"}}<output>{{data.system.xp.remaining}}</output></label></div></div>{{/if}}
+    </section>
+
+    <section class="sheet-card"><h2>{{localize "tinyd6.actor.proficiencies.header"}}</h2><div class="check-grid"><label><input type="checkbox" name="system.proficiencies.lightMelee" {{checked data.system.proficiencies.lightMelee}}/>{{localize "tinyd6.weapon.lightMelee"}}</label><label><input type="checkbox" name="system.proficiencies.heavyMelee" {{checked data.system.proficiencies.heavyMelee}}/>{{localize "tinyd6.weapon.heavyMelee"}}</label><label><input type="checkbox" name="system.proficiencies.lightRanged" {{checked data.system.proficiencies.lightRanged}}/>{{localize "tinyd6.weapon.lightRanged"}}</label><label><input type="checkbox" name="system.proficiencies.heavyRanged" {{checked data.system.proficiencies.heavyRanged}}/>{{localize "tinyd6.weapon.heavyRanged"}}</label></div><label class="sheet-field">{{localize "tinyd6.actor.proficiencies.mastered"}}<input name="system.proficiencies.masteredWeapons" type="text" value="{{data.system.proficiencies.masteredWeapons}}"/></label></section>
+
+    <section class="sheet-card"><div class="section-title"><h2>{{localize "tinyd6.actor.traits"}}</h2><button type="button" data-action="createItem" data-type="trait"><i class="fas fa-plus"></i> {{localize "tinyd6.sheet.newItem"}}</button></div>{{#if heritage}}<article class="heritage-trait"><div class="trait-source"><i class="fas fa-fingerprint"></i><strong>{{localize config.heritageTraitPath}}</strong><span>{{heritage.name}}</span></div>{{#if archetypeTraitHTML}}<div class="trait-description">{{{archetypeTraitHTML}}}</div>{{else}}<p class="empty-trait">{{localize "tinyd6.sheet.none"}}</p>{{/if}}</article>{{/if}}<ul class="sheet-list">{{#each inventory.traits as |trait|}}{{> "systems/tinyd6/templates/partials/trait-block.hbs" trait=trait}}{{/each}}</ul></section>
+
+    <section class="sheet-card inventory-card"><h2>{{localize "tinyd6.actor.gear"}}</h2>{{> "systems/tinyd6/templates/partials/equipped-loadout.hbs" inventory=inventory}}<div class="inventory-list">{{#each inventory.gear as |gearItem|}}{{> "systems/tinyd6/templates/partials/inventory-card.hbs" gearItem=gearItem tagName="div" classes="sheet-list-item"}}{{/each}}</div></section>
+</div>

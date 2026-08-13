@@ -1,0 +1,19 @@
+<{{#if tagName}}{{tagName}}{{^}}li{{/if}} class="{{classes}} actor-item" data-item-id="{{gearItem._id}}">
+<div class="d-flex justify-content-between">
+    <img src="{{gearItem.img}}" title="{{gearItem.name}}" width="24" height="24" class="align-middle mr-2"/>
+    <h4 class="mr-auto">
+        <button type="button" class="item-show d-inline-block h-100" data-action="showItem">{{gearItem.name}}</button>
+    </h4>
+    {{#if (eq gearItem.type "weapon")}}
+        <button type="button" class="item-control item-equip ml-2 {{#if gearItem.system.equipped}}equipped{{/if}}" data-action="equipItem" data-field="system.equipped" title="{{localize "tinyd6.actor.actions.equipTrait"}}" aria-pressed="{{#if gearItem.system.equipped}}true{{else}}false{{/if}}">
+            <span class="fas fa-tshirt"></span><span class="equip-label">{{#if gearItem.system.equipped}}{{localize "tinyd6.actor.equipped"}}{{else}}{{localize "tinyd6.actor.equip"}}{{/if}}</span>
+        </button>
+    {{/if}}
+    {{#if (eq gearItem.type "armor")}}
+        <button type="button" class="item-control item-equip ml-2 {{#if gearItem.system.equipped}}equipped{{/if}}" data-action="equipItem" data-field="system.equipped" title="{{localize "tinyd6.actor.actions.equipTrait"}}" aria-pressed="{{#if gearItem.system.equipped}}true{{else}}false{{/if}}">
+            <span class="fas fa-tshirt"></span><span class="equip-label">{{#if gearItem.system.equipped}}{{localize "tinyd6.actor.equipped"}}{{else}}{{localize "tinyd6.actor.equip"}}{{/if}}</span>
+        </button>
+    {{/if}}
+    <button type="button" class="item-control item-delete ml-2" data-action="deleteItem" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></button>
+</div>
+</{{#if tagName}}{{tagName}}{{^}}li{{/if}}>

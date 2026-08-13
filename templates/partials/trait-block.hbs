@@ -1,0 +1,12 @@
+<li class="actor-item" data-item-id="{{trait.item.id}}">
+    <div class="d-flex">
+        <img src="{{trait.item.img}}" title="{{trait.item.name}}" width="24" height="24" class="align-middle trait-image mr-2"/>
+        <div class="actor-item-description w-100">
+            <div class="d-flex justify-content-between">
+                <h3 class="item-name h-100 mr-auto"><button type="button" class="item-show d-inline-block h-100" data-action="showItem">{{trait.item.name}}</button></h3>
+                <button type="button" class="item-control item-delete ml-2" data-action="deleteItem" title="{{localize "tinyd6.actor.actions.deleteTrait"}}"><i class="fas fa-times"></i></button>
+            </div>
+            {{#if trait.descriptionHTML}}<div class="trait-description">{{{trait.descriptionHTML}}}</div>{{/if}}
+        </div>
+    </div>
+</li>

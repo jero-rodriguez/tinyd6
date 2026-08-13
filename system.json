@@ -1,0 +1,125 @@
+{
+  "id": "tinyd6",
+  "title": "Tiny D6 (Unofficial)",
+  "description": "Tiny D6 system module for Foundry VTT to facilitate playing Tiny D6 games such as Tiny Dungeon and Tiny Frontiers. Currently in Alpha so expect breaking changes in any update.",
+  "authors": [
+    {
+      "id": "architech99",
+      "name": "architech99"
+    },
+    {
+      "id": "kaelad",
+      "name": "Chris Seieroe"
+    },
+    {
+      "id": "ParvusDomus",
+      "name": "ParvusDomus"
+    },
+    {
+      "id": "pixelmonsta",
+      "name": "pixelmonsta"
+    },
+    {
+      "id": "polski",
+      "name": "Polski"
+    }
+  ],
+  "version": "14.0.0",
+  "type": "system",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.365"
+  },
+  "documentTypes": {
+    "Actor": {
+      "hero": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    },
+    "Item": {
+      "weapon": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "gear": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "heritage": {
+        "htmlFields": [
+          "description",
+          "trait"
+        ]
+      },
+      "trait": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    }
+  },
+  "esmodules": [
+    "module/tinyd6.js",
+    "module/settings.js"
+  ],
+  "styles": [
+    "css/tinyd6.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "de",
+      "name": "German",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-br.json"
+    }
+  ],
+  "media": [],
+  "readme": "README.md",
+  "socket": false,
+  "manifest": "https://gitlab.com/architech99/foundry-tinyd6/-/raw/master/system.json",
+  "download": "https://gitlab.com/architech99/foundry-tinyd6/-/archive/master/foundry-tinyd6-master.zip",
+  "protected": false,
+  "initiative": "2d6",
+  "grid": {
+    "distance": 5,
+    "units": "ft"
+  }
+}

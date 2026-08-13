@@ -1,0 +1,23 @@
+<div class="equipped-loadout">
+    <div class="equipped-weapons">
+        {{#each inventory.weapons as |weapon|}}
+            <div class="equipped-weapon">
+                <img src="{{weapon.img}}" title="{{weapon.name}}" alt="{{weapon.name}}"/>
+                <strong>{{weapon.name}}</strong>
+                <span class="weapon-tags">
+                    <label><input type="checkbox" disabled {{#if (eq weapon.system.damageType "light")}}checked{{/if}}/>{{localize "tinyd6.weapon.lightShort"}}</label>
+                    <label><input type="checkbox" disabled {{#if (eq weapon.system.damageType "heavy")}}checked{{/if}}/>{{localize "tinyd6.weapon.heavyShort"}}</label>
+                    <label><input type="checkbox" disabled {{#if (eq weapon.system.group "melee")}}checked{{/if}}/>{{localize "tinyd6.weapon.meleeShort"}}</label>
+                    <label><input type="checkbox" disabled {{#if (eq weapon.system.group "ranged")}}checked{{/if}}/>{{localize "tinyd6.weapon.rangedShort"}}</label>
+                </span>
+            </div>
+        {{else}}
+            <p class="empty-loadout">{{localize "tinyd6.sheet.none"}}</p>
+        {{/each}}
+    </div>
+    <div class="equipped-armor">
+        <i class="fas fa-shield-alt"></i>
+        <strong>{{inventory.armorTotal}}</strong>
+        <span>{{#each inventory.armor as |armor|}}{{armor.name}}{{else}}{{localize "tinyd6.armor.none"}}{{/each}}</span>
+    </div>
+</div>
