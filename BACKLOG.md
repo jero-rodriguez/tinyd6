@@ -102,7 +102,7 @@ data, and all current fields are available without `template.json`.
 
 ### M1-03: Migrate existing World data
 
-- [ ] Define an internal schema-version strategy.
+- [x] Define an internal schema-version strategy.
 - [ ] Implement idempotent migrations for World Actors, World Items, and
   embedded Items.
 - [ ] Cover unlinked Token Actor Delta data where applicable.

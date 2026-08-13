@@ -3,6 +3,13 @@ import { localizeAll } from "./helpers/utils.js";
 export const registerGameSettings = function () {
     let systemName = "tinyd6";
 
+    game.settings.register(systemName, "schemaVersion", {
+        scope: "world",
+        config: false,
+        default: 0,
+        type: Number
+    });
+
     game.settings.register(systemName, "theme", {
         name: game.i18n.localize("tinyd6.settings.theme.name"),
         hint:  game.i18n.localize("tinyd6.settings.theme.hint"),

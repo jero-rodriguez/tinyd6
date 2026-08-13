@@ -6,6 +6,9 @@ const {
     StringField
 } = foundry.data.fields;
 
+/** The current persisted Tiny D6 document schema. See MIGRATIONS.md. */
+export const MIGRATION_SCHEMA_VERSION = 1;
+
 const numberField = (initial, options = {}) => new NumberField({
     required: true,
     nullable: false,
