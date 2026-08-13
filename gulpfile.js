@@ -1,0 +1,26 @@
+const { series, parallel, src, dest, watch } = require('gulp');
+
+const lint = require('gulp-jshint');
+const concat = require('gulp-concat');
+const nano = require('gulp-cssnano');
+const sass = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify');
+
+
+const paths = {
+    css: [ "scss/tinyd6.scss" ]
+};
+
+const buildPaths = {
+    css: "css"
+}
+
+function css() {
+    return src(paths.css)
+        .pipe(concat('tinyd6.css'))
+        .pipe(sass())
+        .pipe(nano())
+        .pipe(dest(buildPaths.css));
+}
+
+exports.css = series(css);

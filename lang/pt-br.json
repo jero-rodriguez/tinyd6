@@ -1,0 +1,265 @@
+{
+  "TYPES": {
+    "Actor": {
+      "hero": "Herói",
+      "npc": "PNJ"
+    },
+    "Item": {
+      "weapon": "Arma",
+      "armor": "Armadura",
+      "gear": "Equipamento",
+      "heritage": "Herança",
+      "trait": "Traço"
+    }
+  },
+  "tinyd6": {
+    "TinyD6HeroSheet": "Herói",
+    "TinyD6NpcSheet": "NPC",
+    "system": {
+      "name": "Tiny D6 2e",
+      "dieRoller": "Rolador de Dados"
+    },
+    "settings": {
+      "title": "Configurações do Sistema",
+      "label": "Configurações do Sistema",
+      "description": "Escolha as regras e mecânicas opcionais que você deseja ativar nas opções abaixo.",
+      "theme": {
+        "name": "Tema",
+        "hint": "Escolha um tema específico para o seu jogo no Tiny D6",
+        "choices": {
+          "cthulhu": "Tiny Cthulhu",
+          "dungeon": "Tiny Dungeon 2e"
+        }
+      },
+      "rollerInCharsheet": {
+        "name": "Rolador de Dados na Ficha de Personagem",
+        "hint": "Ative para exibir o Rolador de Dados na Ficha de Personagem."
+      },
+      "enableCorruption": {
+        "name": "Rastrear Corrupção",
+        "hint": "Adiciona um contador de Corrupção à Ficha de Personagem."
+      },
+      "enableAdvancement": {
+        "name": "Progressão de Personagem",
+        "hint": "Progressão de Personagem baseada no número de sessões ou usando Pontos de Experiência",
+        "choices": {
+          "none": "Nenhuma",
+          "minimalist": "Avanço Minimalista",
+          "xp": "Pontos de Experiência"
+        }
+      },
+      "enableItemTracking": {
+        "name": "Ativar Controle de Itens",
+        "hint": "Mostrar uso de vagas ocupadas pelo item no inventário e calcular as restantes."
+      },
+      "enableDepletionPoints": {
+        "name": "Habilitar Desgaste de Itens",
+        "hint": "Quando o item usar Pontos de Durabilidade, registrá-los nos itens dos personagens."
+      },
+      "enableCriticalHits": {
+        "name": "Ativar Acertos Críticos",
+        "hint": "Marca um Teste como 'Acerto Crítico' quando todos os dados caírem 6."
+      },
+      "enableCriticalFailure": {
+        "name": "Ativar Erros Críticos",
+        "hint": "Marca um Teste como 'Erro Crítico' quando todos os dados caírem 1."
+      },
+      "enableVariableWeaponDamage": {
+        "name": "Dano de Arma Variável",
+        "hint": "Calcula o dano de arma variável em testes de ataque."
+      },
+      "enableDamageReduction": {
+        "name": "Ativar Redução de Dano",
+        "hint": "Armadura fornece um valor fixo de Redução de Dano quando equipada."
+      },
+      "enablePowerOrigin": {
+        "name": "Ativar Origem do Poder",
+        "hint": "Adiciona um campo de texto para a Origem do seu Super Poder."
+      },
+      "enableWeakness": {
+        "name": "Ativar Fraqueza",
+        "hint": "Adiciona um campo de texto para sua Super Fraqueza."
+      },
+      "enablePanic": {
+        "name": "Ativar Pânico",
+        "hint": "Adiciona um contador de Pânico."
+      },
+      "enableRadiation": {
+        "name": "Ativar Radiação",
+        "hint": "Adiciona um contador de Radiação."
+      },
+      "enableGrit": {
+        "name": "Ativar Coragem",
+        "hint": "Adiciona um contador de Coragem."
+      }
+    },
+    "dice": {
+      "modifier": {
+        "focus": "Foco",
+        "marksman": "Atirador"
+      },
+      "roll": {
+        "disadvantage": "Desvantagem",
+        "standard": "Teste Padrão",
+        "advantage": "Vantagem",
+        "success": "Sucesso!",
+        "failure": "Falha",
+        "critical": "Acerto Crítico!!",
+        "botch": "Erro Crítico!!"
+      }
+    },
+    "sheet": {
+      "newItem": "Novo Item",
+      "description": "Descrição",
+      "none": "Nenhum"
+    },
+    "actor": {
+      "name": "Nome",
+      "npc": "NPC",
+      "people": "Povo",
+      "traits": "Traços",
+      "description": "Descrição",
+      "tiny-cthulhu": {
+        "character": "Bio",
+        "heritage": {
+          "header": "Arquétipo",
+          "traits": "Traço de Arquétipo",
+          "delete": "Remover Arquétipo"
+        }
+      },
+      "tiny-dungeon": {
+        "character": "Personagem",
+        "heritage": {
+          "header": "Herança",
+          "traits": "Traço de Herança",
+          "delete": "Remover Herança"
+        }
+      },
+      "homeland": "Pátria",
+      "age": "Idade",
+      "eyes": "Olhos",
+      "hair": "Cabelo",
+      "familyTrade": "Ramo da Família",
+      "powerOrigin": "Origem do Poder",
+      "weakness": "Fraqueza",
+      "belief": "Crença",
+      "xp": {
+        "header": "Experiência",
+        "progression": "Progressão",
+        "total": "Total",
+        "spent": "Gasto",
+        "remaining": "Restante"
+      },
+      "wounds": {
+        "header": "PVs",
+        "current": "Atual",
+        "max": "Máximo:",
+        "increaseMax": "Aumentar Pontos de Vida Máximo",
+        "help": "Marque uma caixa quando sofrer dano. Desmarque quando for curado."
+      },
+      "radiation": {
+        "header": "Radiação",
+        "current": "Atual",
+        "max": "Máxima:",
+        "increaseMax": "Aumentar Radiação Máxima",
+        "help": "Marque uma caixa quando sofrer Radiação."
+      },
+      "corruption": {
+        "test": "Teste de Corrupção",
+        "header": "Corrupção",
+        "current": "Atual",
+        "max": "Máxima:",
+        "increaseMax": "Aumentar Limite de Corrupção",
+        "help": "Marque uma caixa quando sofrer corrupção. Desmarque quando recuperar."
+      },
+      "panic": {
+        "test": "Teste de Pânico",
+        "header": "Pânico",
+        "current": "Atual",
+        "help": "Desmarque uma caixa quando sofrer Pânico. Marque quando recuperar. Testes de Pânico quando Pânico chegar a 1."
+      },
+      "grit": {
+        "header": "Coragem",
+        "current": "Atual",
+        "help": "Desmarque uma caixa quando sofrer Pânico."
+      },
+      "proficiencies": {
+        "header": "Proficiência",
+        "mastered": "Especialidade"
+      },
+      "gear": "Inventário",
+      "equipped": "Equipado",
+      "equip": "Equipar",
+      "weaponry": "Armamento",
+      "wearing": "Vestimenta",
+      "actions": {
+        "editTrait": "Editar Traço",
+        "deleteTrait": "Remover Traço"
+      }
+    },
+    "weaponCategories":
+    {
+      "melee": "Corpo a Corpo",
+      "ranged": "À Distância"
+    },
+    "weaponTypes": {
+      "none": "",
+      "light": "Leve",
+      "heavy": "Pesada"
+    },
+    "armorTypes": {
+      "none": "",
+      "light": "Leve",
+      "medium": "Média",
+      "heavy": "Pesada"
+    },
+    "corruptionTests": {
+      "none": "Nenhum",
+      "disadvantage": "Desvantagem",
+      "standard": "Padrão"
+    },
+    "weapon": {
+      "name": "Nome",
+      "type": "Tipo de Arma",
+      "damage": "Dano",
+      "slots": "Vagas",
+      "description": "Descrição",
+      "light": "Leve",
+      "heavy": "Pesado",
+      "ranged": "À Distância",
+      "lightMelee": "L. Corpo a Corpo",
+      "heavyMelee": "P. Corpo a Corpo",
+      "lightRanged": "L. À Distância",
+      "heavyRanged": "P. À Distância",
+      "lightShort": "L",
+      "heavyShort": "P",
+      "meleeShort": "C",
+      "rangedShort": "D"
+    },
+    "armor": {
+      "name": "Nome",
+      "type": "Tipo de Armadura",
+      "damageReduction": "RD",
+      "slots": "Vagas",
+      "depletion": "Desgaste",
+      "description": "Descrição",
+      "none": "Sem Armadura"
+    },
+    "gear": {
+      "name": "Nome",
+      "slots": "Vagas",
+      "depletion": "Desgaste",
+      "quantity": "Quantidade",
+      "description": "Descrição"
+    },
+    "heritage": {
+      "trait": "Traço de Herança",
+      "startingHealth": "PV inicial",
+      "corruptionThreshold": "Limite de Corrupção"
+    },
+    "trait": {
+      "name": "Nome",
+      "description": "Descrição"
+    }
+  }
+}

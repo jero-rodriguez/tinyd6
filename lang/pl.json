@@ -1,0 +1,163 @@
+{
+  "TYPES": {
+    "Actor": {
+      "hero": "Bohater",
+      "npc": "BN"
+    },
+    "Item": {
+      "weapon": "Broń",
+      "armor": "Pancerz",
+      "gear": "Ekwipunek",
+      "heritage": "Dziedzictwo",
+      "trait": "Cecha"
+    }
+  },
+    "tinyd6": {
+      "TinyD6HeroSheet": "Bohater",
+      "TinyD6NpcSheet": "BN",
+      "system": {
+        "name": "Tiny D6 2e",
+        "dieRoller": "Rzut Kością"
+      },
+      "settings": {
+        "title": "Ustawienia systemu",
+        "label": "Ustawienia systemu",
+        "description": "Wybierz opcjonalne zasady i mechaniki, które chcesz włączyć spośród poniższych opcji.",
+        "theme": {
+          "name": "Motyw",
+          "hint": "Wybierz motyw odpowiedni dla twojej gry Tiny D6",
+          "choices": {
+            "cthulhu": "Tiny Cthulhu",
+            "dungeon": "Tiny Dungeon 2e"
+          }
+        },
+        "rollerInCharsheet": {
+          "name": "Rzut kością w Karcie Postaci",
+          "hint": "Włącz, aby mieć dostęp do rzutu kością bezpośrednio w Karcie Postaci."
+        },
+        "enableCorruption": {
+          "name": "Włącz tor Skażenia",
+          "hint": "Dodaje do Karty Postaci tor Skażenia."
+        },
+        "enableAdvancement": {
+          "name": "Rozwój postaci",
+          "hint": "Postacie rozwijają się na podstawie sesji lub zdobywając punkty doświadczenia.",
+          "choices": {
+            "none": "Brak",
+            "minimalist": "Minimalistyczny rozwój",
+            "xp": "Punkty doświadczenia"
+          }
+        },
+        "enableItemTracking": {
+          "name": "Śledzenie przedmiotów",
+          "hint": "Pokazuje wykorzystane sloty przedmiotów i oblicza pozostałe."
+        },
+        "enableDepletionPoints": {
+          "name": "Zużycie/Wyczerpanie przedmiotów",
+          "hint": "Śledzi punkty zużycia przedmiotów na karcie postaci."
+        },
+        "enableCriticalHits": {
+          "name": "Trafienia krytyczne",
+          "hint": "Oznacza test jako 'Krytyczny Sukces', gdy wszystkie kości pokażą 6."
+        },
+        "enableCriticalFailure": {
+          "name": "Krytyczne porażki",
+          "hint": "Oznacza test jako 'Krytyczna Porażka', gdy wszystkie kości pokażą 1."
+        },
+        "enableVariableWeaponDamage": {
+          "name": "Zmienna obrażenia broni",
+          "hint": "Oblicza zmienne obrażenia broni przy ataku."
+        },
+        "enableDamageReduction": {
+          "name": "Redukcja obrażeń",
+          "hint": "Pancerz zapewnia stałą wartość redukcji obrażeń po założeniu."
+        },
+        "enablePowerOrigin": {
+          "name": "Pochodzenie mocy",
+          "hint": "Dodaje pole tekstowe do wpisania pochodzenia Super Mocy."
+        },
+        "enableWeakness": {
+          "name": "Słabość",
+          "hint": "Dodaje pole tekstowe do wpisania Super Słabości."
+        },
+        "enablePanic": {
+          "name": "Panika",
+          "hint": "Dodaje licznik do śledzenia Paniki."
+        },
+        "enableRadiation": {
+          "name": "Promieniowanie",
+          "hint": "Dodaje licznik do śledzenia Promieniowania."
+        },
+        "enableGrit": {
+          "name": "Hart ducha",
+          "hint": "Dodaje licznik do śledzenia Hartu ducha."
+        }
+      },
+      "dice": {
+        "modifier": {
+          "focus": "Skupienie",
+          "marksman": "Strzelec wyborowy"
+        },
+        "roll": {
+          "disadvantage": "Utrudnienie",
+          "standard": "Zwykły Test",
+          "advantage": "Ułatwienie",
+          "success": "Sukces!",
+          "failure": "Porażka",
+          "critical": "Krytyczny Sukces!!",
+          "botch": "Krytyczna Porażka!!"
+        }
+      },
+      "sheet": {
+        "newItem": "Nowy przedmiot",
+        "description": "Opis",
+        "none": "Brak"
+      },
+      "actor": {
+        "name": "Imię",
+        "npc": "BN",
+        "people": "Ludzie",
+        "traits": "Cechy",
+        "description": "Opis",
+        "tiny-cthulhu": {
+          "character": "Bio",
+          "heritage": {
+            "header": "Archetyp",
+            "traits": "Cecha Archetypu",
+            "delete": "Usuń Archetyp"
+          }
+        },
+        "tiny-dungeon": {
+          "character": "Postać",
+          "heritage": {
+            "header": "Pochodzenie",
+            "traits": "Cecha Pochodzenia",
+            "delete": "Usuń Pochodzenie"
+          }
+        },
+        "homeland": "Ojczyzna",
+        "age": "Wiek",
+        "eyes": "Oczy",
+        "hair": "Włosy",
+        "familyTrade": "Zawód rodzinny",
+        "powerOrigin": "Pochodzenie mocy",
+        "weakness": "Słabość",
+        "belief": "Wiara",
+        "xp": {
+          "header": "Doświadczenie",
+          "progression": "Progresja",
+          "total": "Razem",
+          "spent": "Wydane",
+          "remaining": "Pozostało"
+        },
+        "wounds": {
+          "header": "Zdrowie",
+          "current": "Obecne",
+          "max": "Maks:",
+          "increaseMax": "Zwiększ maks. HP",
+          "help": "Zaznacz, gdy otrzymasz obrażenia. Odznacz, gdy wyzdrowiejesz."
+        }
+      }
+    }
+  }
+  
