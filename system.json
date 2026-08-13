@@ -4,24 +4,8 @@
   "description": "Tiny D6 system module for Foundry VTT to facilitate playing Tiny D6 games such as Tiny Dungeon and Tiny Frontiers. Currently in Alpha so expect breaking changes in any update.",
   "authors": [
     {
-      "id": "architech99",
-      "name": "architech99"
-    },
-    {
-      "id": "kaelad",
-      "name": "Chris Seieroe"
-    },
-    {
-      "id": "ParvusDomus",
-      "name": "ParvusDomus"
-    },
-    {
-      "id": "pixelmonsta",
-      "name": "pixelmonsta"
-    },
-    {
-      "id": "polski",
-      "name": "Polski"
+      "id": "jero-rodriguez",
+      "name": "Jeronimo Rodriguez"
     }
   ],
   "version": "14.0.0",
