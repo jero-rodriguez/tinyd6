@@ -71,10 +71,10 @@ manifest, missing built CSS, or missing required runtime files.
 - [x] Declare any server-sanitized HTML fields required by the new data models.
 - [x] Remove the duplicate standalone loading of `module/settings.js`; it is
   already imported by the entry module.
-- [ ] Update manifest metadata, release URLs, and semantic versioning strategy.
+- [x] Update manifest metadata, release URLs, and semantic versioning strategy.
 - [x] Update the CI runtime for Foundry v14-compatible tooling.
 - [x] Include `template.json` during the temporary compatibility period.
-- [ ] Ensure the release archive includes `assets`, `css`, `fonts`, `lang`,
+- [x] Ensure the release archive includes `assets`, `css`, `fonts`, `lang`,
   `module`, `templates`, `packs` when introduced, and all root metadata files.
 
 **Acceptance criteria:** A freshly installed archive is recognized as a Foundry
