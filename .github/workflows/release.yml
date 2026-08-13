@@ -1,0 +1,98 @@
+name: Release Tiny D6
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish Foundry package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out release tag
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Validate release version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          VERSION="${TAG#v}"
+          export VERSION
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "Release tags must use vMAJOR.MINOR.PATCH or a SemVer prerelease suffix."
+            exit 1
+          fi
+          node -e '
+            const fs = require("fs");
+            const version = process.env.VERSION;
+            const manifest = JSON.parse(fs.readFileSync("system.json", "utf8"));
+            const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+            const lockfile = JSON.parse(fs.readFileSync("package-lock.json", "utf8"));
+            const versions = [manifest.version, packageJson.version, lockfile.version, lockfile.packages[""].version];
+            if (!versions.every(value => value === version)) {
+              throw new Error(`Release tag version ${version} does not match system and package metadata: ${versions.join(", ")}`);
+            }
+          '
+        shell: bash
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build stylesheet
+        run: npm run build
+
+      - name: Assemble Foundry package
+        run: |
+          mkdir release
+          cp -R assets css fonts lang module templates release/
+          if [ -d packs ]; then cp -R packs release/; fi
+          cp system.json README.md RELEASE-NOTES.md LICENSE package.json package-lock.json release/
+          if [ -f template.json ]; then cp template.json release/; fi
+          (cd release && zip -r ../tinyd6.zip .)
+        shell: bash
+
+      - name: Verify package contents
+        run: |
+          for directory in assets css fonts lang module templates; do
+            unzip -Z1 tinyd6.zip | grep -q "^${directory}/"
+          done
+          for file in system.json README.md RELEASE-NOTES.md LICENSE package.json package-lock.json; do
+            unzip -Z1 tinyd6.zip | grep -Fxq "$file"
+          done
+          if [ -f template.json ]; then unzip -Z1 tinyd6.zip | grep -Fxq template.json; fi
+        shell: bash
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tinyd6-${{ github.ref_name }}
+          path: |
+            tinyd6.zip
+            system.json
+          if-no-files-found: error
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" tinyd6.zip system.json --clobber
+          else
+            gh release create "$TAG" tinyd6.zip system.json \
+              --title "Tiny D6 ${TAG#v}" \
+              --generate-notes \
+              $([[ "$TAG" == *-* ]] && printf '%s' '--prerelease')
+          fi
+        shell: bash

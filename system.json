@@ -96,10 +96,13 @@
     }
   ],
   "media": [],
+  "url": "https://github.com/jero-rodriguez/tinyd6",
   "readme": "README.md",
+  "bugs": "https://github.com/jero-rodriguez/tinyd6/issues",
+  "changelog": "https://github.com/jero-rodriguez/tinyd6/blob/main/RELEASE-NOTES.md",
   "socket": false,
-  "manifest": "https://gitlab.com/architech99/foundry-tinyd6/-/raw/master/system.json",
-  "download": "https://gitlab.com/architech99/foundry-tinyd6/-/archive/master/foundry-tinyd6-master.zip",
+  "manifest": "https://github.com/jero-rodriguez/tinyd6/releases/latest/download/system.json",
+  "download": "https://github.com/jero-rodriguez/tinyd6/releases/latest/download/tinyd6.zip",
   "protected": false,
   "initiative": "2d6",
   "grid": {

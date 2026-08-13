@@ -1,5 +1,10 @@
 # Release Notes
 
+## 14.0.0 (Unreleased)
+
+- Modernize the system manifest for Foundry VTT v14.
+- Establish GitHub Releases as the installation and update source.
+
 ## 12.6.2
 
 - Add: French translation
